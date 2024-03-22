@@ -1,0 +1,11 @@
+<div>
+  <h1 class="font-bold text-4xl">Wawa Fertility</h1>
+  <% if current_user %>
+  <p class="capitalize">Hi, <%= current_user.username%> </p>
+  <%=link_to "Start Chatting Here", rooms_path %>
+  <%=button_to "Logout", destroy_user_session_path, method: :delete, data: {turbo_method: :delete} %>
+  <%else%>
+  <%=link_to "Login", new_user_session_path %>
+  <%=link_to "Sign up", new_user_registration_path %>
+  <%end%>
+</div>
